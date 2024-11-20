@@ -1,31 +1,48 @@
-Source: [tidytuesday/data/2024/2024-09-03/readme.md at master · rfordatascience/tidytuesday · GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-09-03/readme.md)
+# Stack Overflow Annual Developer Survey 2024
 
+This dataset is derived from the 2024 Stack Overflow Annual Developer Survey. Conducted in May 2024, the survey gathered responses from over 65,000 developers across seven key sections:
 
+1. Basic information
+2. Education, work, and career
+3. Tech and tech culture
+4. Stack Overflow community
+5. Artificial Intelligence (AI)
+6. Professional Developer Series - Not part of the main survey
+7. Thoughts on Survey
+
+The dataset provided for this analysis focuses exclusively on the single-response questions from the main survey sections. Each categorical response in the survey has been integer-coded, with corresponding labels available in the crosswalk file.
+
+What can you see about developer demographics? How do developers engage with Stack Overflow? What do they think about AI?
+
+## Data Source
+
+The data and description may be found on following GitHub repository:
+
+[tidytuesday/data/2024/2024-09-03/readme.md at master · rfordatascience/tidytuesday · GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-09-03/readme.md)
+
+Three csv files contain all the data used in the study.
 
 - https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-09-03/qname_levels_single_response_crosswalk.csv
 - https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-09-03/stackoverflow_survey_questions.csv
 - https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-09-03/stackoverflow_survey_single_response.csv
 
 
-This dataset is derived from the 2024 Stack Overflow Annual Developer Survey. Conducted in May 2024, the survey gathered responses from over 65,000 developers across seven key sections:
+## Data Dictionary
 
-> 1. Basic information
-> 2. Education, work, and career
-> 3. Tech and tech culture
-> 4. Stack Overflow community
-> 5. Artificial Intelligence (AI)
-> 6. Professional Developer Series - Not part of the main survey
-> 7. Thoughts on Survey
+The data of the survey is divided into three csv files, containing the questions of the survey, the possible answers of each question and the survey results for each survey participant.
 
-The dataset provided for this analysis focuses exclusively on the single-response questions from the main survey sections. Each categorical response in the survey has been integer-coded, with corresponding labels available in the crosswalk file.
+# `stackoverflow_survey_questions.csv`
 
-What can you see about developer demographics? How do developers engage with Stack Overflow? What do they think about AI?
+Contains all questions asked in the survey, with an identification (qname) and the text represented in the survey.
 
-
-
-### Data Dictionary
+|variable |class     |description |
+|:--------|:---------|:-----------|
+|qname    |character |Categorical Question/Column Name in main data |
+|question |character |Text of the question as it was presented to the respondent |
 
 # `qname_levels_single_response_crosswalk.csv`
+
+Contains the possible answers of each question in the survey. The questions are referenced by the qname identification.
 
 |variable |class     |description |
 |:--------|:---------|:-----------|
@@ -33,14 +50,9 @@ What can you see about developer demographics? How do developers engage with Sta
 |level    |integer   |Integer index associated with each column response       |
 |label   |character |Label associated with integer index      |
 
-# `stackoverflow_survey_questions.csv`
-
-|variable |class     |description |
-|:--------|:---------|:-----------|
-|qname    |character |Categorical Question/Column Name in main data |
-|question |character |Text of the question as it was presented to the respondent |
-
 # `stackoverflow_survey_single_response.csv`
+
+Contains a list of all responses of the participants. One row contains all answers of each questions.
 
 | variable              | class     | description                                                                         |
 |:--------------------------|:-----------------|:--------------------------|
